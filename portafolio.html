@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio | Bryan Steven Ramírez Rico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+
+    body {
+      background: radial-gradient(circle at 20% 20%, #1b002b, #090010);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10%;
+      background: linear-gradient(135deg, rgba(70,0,90,0.9), rgba(10,0,30,0.95)), 
+                  url('https://cdn.pixabay.com/photo/2017/06/10/07/18/laptop-2381181_1280.jpg') center/cover;
+      background-blend-mode: overlay;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+      animation: fadeInLeft 1.5s ease;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #c98fff;
+      white-space: nowrap;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-top: 15px;
+      color: #ddd;
+      line-height: 1.6;
+      max-width: 500px;
+      opacity: 0;
+      animation: fadeInText 1s ease forwards;
+      animation-delay: 3s; /* aparece después del typing */
+    }
+
+    @keyframes fadeInText {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .hero img {
+      width: 320px;
+      border-radius: 20px;
+      filter: drop-shadow(0 0 20px rgba(180,0,255,0.4));
+      animation: fadeInRight 1.5s ease;
+    }
+
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #bb86fc;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: #bb86fc;
+      border-radius: 3px;
+    }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .skill, .project {
+      background: rgba(40,0,60,0.7);
+      border-radius: 20px;
+      padding: 25px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(180,0,255,0.15);
+    }
+
+    .skill:hover, .project:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(180,0,255,0.4);
+    }
+
+    .skill img, .project img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    .skill img:hover {transform: rotate(10deg) scale(1.1);}
+
+    .project img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .project h3 {color: #c98fff; margin-bottom: 10px;}
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(135deg,#bb86fc,#9c27b0);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .btn:hover {box-shadow: 0 0 20px rgba(187,134,252,0.8); transform: scale(1.05);}
+
+    footer {
+      text-align: center;
+      padding: 50px 0;
+      background: #0c0018;
+      color: #aaa;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    @keyframes fadeInLeft {from {opacity:0; transform:translateX(-50px);} to {opacity:1; transform:translateX(0);}}
+    @keyframes fadeInRight {from {opacity:0; transform:translateX(50px);} to {opacity:1; transform:translateX(0);}}
+  </style>
+</head>
+<body onbeforeunload="window.scrollTo(0, 0)"> <!-- NUEVO: fuerza reinicio desde arriba -->
+
+  <header>
+    <div class="hero">
+      <div class="hero-text">
+        <h1><span id="emoji">👾</span> <span id="typing"></span></h1>
+        <p>Soy un desarrollador <strong>Full Stack</strong> con habilidades en Java, JavaScript, React y Node.js. Me apasiona crear soluciones completas y visualmente atractivas, combinando la lógica del backend con la experiencia del frontend. Busco crecer profesionalmente y aportar en proyectos innovadores.</p>
+      </div>
+      <img src="yoyo.png" alt="Bryan Foto" />
+    </div>
+  </header>
+
+  <section id="skills">
+    <h2>🔧 Herramientas y Tecnologías</h2>
+    <div class="skills">
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" /><p>Java</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /><p>JavaScript</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" /><p>React</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" /><p>Node.js</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" /><p>MongoDB</p></div>
+      <div class="skill">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter: invert(1) brightness(200%);" />
+  <p>GitHub</p>
+</div>
+
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" /><p>Next.js</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" /><p>PostgreSQL</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Proyectos</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="sistemadeinventario.png" alt="Sistema de Inventario" class="project-img">
+        <h3>Sistema de Inventario</h3>
+        <p>Aplicación web desarrollada para la gestión de productos, precios y existencias. Incluye operaciones CRUD completas, conexión a base de datos y una interfaz clara para la administración de inventario. Desarrollada con <strong>Next.js</strong> y <strong>MongoDB</strong>, con enfoque en eficiencia y escalabilidad.</p>
+      </div>
+      <div class="project">
+        <img src="portafolio.png" alt="Portafolio Personal" class="project-img">
+        <h3>Portafolio Personal</h3>
+        <p>Desarrollo de un portafolio web moderno utilizando <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>. Incluye animaciones personalizadas, diseño responsivo y efectos visuales en tonos morados. Secciones interactivas, presentación profesional y enlace directo para descargar mi hoja de vida.</p>
+      </div>
+      <div class="project">
+        <img src="casas.png" alt="Casas Desarrolladoras" class="project-img">
+        <h3>Búsqueda de Casas Desarrolladoras</h3>
+        <p>Aplicación web que permite realizar búsquedas de casas desarrolladoras, mostrando información detallada de cada proyecto. Implementa una interfaz intuitiva y adaptable, con enfoque en la experiencia del usuario y la organización eficiente de datos.</p>
+      </div>
+      <div class="project">
+        <img src="busqueda.png" alt="Búsqueda con Filtrado" class="project-img">
+        <h3>Búsqueda con Filtrado</h3>
+        <p>Aplicación web interactiva para buscar cualquier imagen con filtrado específico. Implementa control de resultados para evitar contenido inapropiado o discriminatorio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>📎 Descargar Hoja de Vida</h2>
+    <p>Puedes descargar mi hoja de vida desde el siguiente enlace:</p>
+    <a href="https://drive.usercontent.google.com/u/0/uc?id=1GgTn-Kg-INtk7yWwdzAVmMowHrG35jNR&export=download" target="_blank" class="btn">Descargar CV</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Bryan Steven Ramírez Rico — Desarrollador Full Stack</p>
+  </footer>
+
+  <!-- NUEVO: Modal para ampliar imagen -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <script>
+    // Efecto de escritura
+    const text = "Hola, soy Bryan.";
+    const typingElement = document.getElementById("typing");
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        typingElement.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 100);
+      }
+    }
+    window.onload = type;
+
+    // NUEVO: Reinicia scroll al refrescar
+    window.onbeforeunload = () => window.scrollTo(0, 0);
+
+    // NUEVO: Modal de imágenes
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const close = document.getElementsByClassName("close")[0];
+    const images = document.querySelectorAll(".project-img");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+      });
+    });
+
+    close.onclick = () => { modal.style.display = "none"; };
+    modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+  </script>
+
+  <style>
+    /* NUEVO: estilo del modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 0, 20, 0.9);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 40px rgba(187,134,252,0.5);
+      animation: zoomIn 0.4s ease;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close:hover { color: #bb86fc; }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+
+</body>
+</html>
